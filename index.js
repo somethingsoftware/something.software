@@ -3,19 +3,12 @@ const app = express();
 const fs = require('fs');
 const request = require("request");
 const BASE_URL = "https://something.software/";
-var sitemap = ["robots.txt","favicon.png","assets/css/main.css",""];
+var sitemap = ["robots.txt","favicon.png","assets/css/main.css", "assets/img/team1.jpeg", "assets/img/team2.jpeg", "assets/img/team3.jpeg", "assets/img/team4.jpeg", ""];
 
 app.get('/favicon.png', (req, res, next) => {
 	res.sendFile('./favicon.png', { root: __dirname });
 });
-
-app.get('/', (req, res, next) => {
-	res.sendFile('./main.html', { root: __dirname });
-});
-
-app.get('/assets/css/main.css', (req, res, next) => {
-	res.sendFile('./assets/css/main.css', { root: __dirname });
-});
+app.use(express.static('public'))
 
 app.get("/robots.txt", (req, res, next) => {
 	res.send(`User-agent: *\nAllow: /\nSitemap: ${BASE_URL}sitemap.xml`);
