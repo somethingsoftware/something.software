@@ -34,7 +34,7 @@ function genSiteMap(){
 genSiteMap();
 
 app.use(function(req, res, next) {
-	res.status(404).sendFile('./main.html', { root: __dirname },);
+	res.status(404).sendFile('./public/index.html', { root: __dirname },);
 
 });
 
