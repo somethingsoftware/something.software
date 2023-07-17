@@ -12,3 +12,12 @@ html, body{
 #navb {
 	min-height: 4rem;
 }
+
+.flex-1 {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0;
+}
+.w-70 {
+	width: 70%;
+}
